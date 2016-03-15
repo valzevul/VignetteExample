@@ -9,10 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
+  @IBOutlet weak var exampleImage: UIImageView!
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    let filter = Filters.VignetteFilter
+    let filtered = filter.filterFunction(UIImage(named: "testImage")!)
+    exampleImage.image = filtered
   }
 
   override func didReceiveMemoryWarning() {
